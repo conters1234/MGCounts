@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>MG Counts</title>
+<link rel="icon" href="MG-Counts.png">
+<script src="./main/jquery.min.js.Без названия"></script>
+
+
+<link rel="stylesheet" href="http://ozcounterz.termix.dx.am/main/style.css">
+</head>
+<body>
+<div class="top-nav">
+<img src="MG-Counts.png" width="50">
+<h1>MG Counts</h1>
+<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+	
+       </button>
+       
+       <style>
+    
+    
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: rubik;
+    background: #bebebe
+}
+
+::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #686868
+}
+
+::-webkit-scrollbar-track {
+    background: #000
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background: black;
+    color: #fff;
+    padding: 16px;
+      box-shadow: 0px 14px 20px 0px #00BCD4;
+}
+
+.top-nav h1 {
+    display: inline;
+}
+
+.nav-items a {
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    padding: 7px;
+    font-size: 18px;
+    color: #0f4c75;
+    transition: color .2s
+}
+
+.nav-items a:hover {
+    color: #fff;
+    background: #0f4c75
+}
+
+.nav-head {
+    text-align: center;
+    font-size: 22px;
+    color: #000
+}
+
+.content {
+    margin-top: 70px
+}
+
+.card {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 12px;
+    font-family: rubik;
+    font-size: 24px;
+    margin-top: 6px;
+    text-align: center;
+    background: #fff
+}
+
+p {
+    font-family: rubik;
+    font-size: 18px
+}
+    
+    
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: rubik;
+    background: #bebebe
+}
+
+::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #686868
+}
+
+::-webkit-scrollbar-track {
+    background: #000
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background: black;
+    color: #fff;
+    padding: 16px;
+      box-shadow: 0px 14px 20px 0px #00BCD4;
+}
+
+.top-nav h1 {
+    display: inline;
+}
+
+.nav-items a {
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    padding: 7px;
+    font-size: 18px;
+    color: #0f4c75;
+    transition: color .2s
+}
+
+.nav-items a:hover {
+    color: #fff;
+    background: #0f4c75
+}
+
+.nav-head {
+    text-align: center;
+    font-size: 22px;
+    color: #000
+}
+
+.content {
+    margin-top: 70px
+}
+
+.card {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 12px;
+    font-family: rubik;
+    font-size: 24px;
+    margin-top: 6px;
+    text-align: center;
+    background: #fff
+}
+
+p {
+    font-family: rubik;
+    font-size: 18px
+}
+     
+     
+     
+       /* cyrillic */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* hebrew */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+       
+       
+</div>
+<div class="content">
+<div class="card">
+<p></p>
+<h1 style="color: red; background: yellow; padding: 10px;"><span>New: STORYFIRE Subscriber Counter <br/><div style="color: blue;">http://mgcounts.atwebpages.com/Storyfire.html</div></span></h1> 
+<br>
+Hello!
+
+<p>Simply choose counter from the list below and enjoy!</p>
+</div>
+<div class="card">
+<div class="nav-items">
+<div class="nav-head">YouTube</div>
+<a href="http://mgcounts.atwebpages.com/Sub-Counter-API.html">YouTube Subscriber Count (API)</a>
+<a href="http://mgcounts.atwebpages.com/View-Count.html">YouTube Live View/Like/Dislike Count</a>
+<hr>
+<div class="nav-head">Other</div>
+<a href="http://mgcounts.atwebpages.com/COVID.html">COVID19/Coronavirus Counter</a>
+<hr>
+<div class="nav-head">STORYFIRE</div>
+<a href="http://mgcounts.atwebpages.com/Storyfire.html">STORYFIRE Subscriber Counter</a>
+
+
+</div>
+</div>
+</div>
+
+</body></html>
