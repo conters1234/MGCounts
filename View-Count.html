@@ -90,7 +90,7 @@ h1 { color: #FFFFFF; background: linear-gradient sans-serif; }
   <br>
   <br>
  
-<link rel=stylesheet href="http://mgcounts.atwebpages.com/odometer-theme-default.css">
+<link rel=stylesheet href="https://sfmg1234.github.io/MGCounts/odometer-theme-default.css">
 <img id="img-bg" class="bg" src="https://yt3.ggpht.com/a-/AOh14GgWNp0Dp7-A6lmaH3vWw3GfhQxNFyAyH1KYqRGnqA=s100-c-k-c0xffffffff-no-rj-mo" width="500" height="300">
 
 <br>
@@ -137,9 +137,7 @@ h1 { color: #FFFFFF; background: linear-gradient sans-serif; }
 </body>
 
 
-    <script src="https://github.hubspot.com/odometer/odometer.js"></script>
-
-<script src="https://github.hubspot.com/odometer/odometer.js"></script>
+<script src="https://sfmg1234.github.io/MGCounts/odometer.js.download"></script><link rel=stylesheet href="https://sfmg1234.github.io/MGCounts/odometer-theme-default.css">
 
 
 
@@ -151,7 +149,7 @@ var VIDEO_ID = params.get("id");
 //alert(CHANNEL_ID);
 //var CHANNEL_ID = "UCzsVMzUqVPd9taVz6VGY12g";
 
-const API_KEY = "AIzaSyCj3Jia_bcv1ISgHQpa_72oNAHFVABf5_Y";
+const API_KEY = "AIzaSyDHlLS-6mDYl8vV2D43D0sfX61wUQgTIaU";
 const API_URL = 'https://www.googleapis.com/youtube/v3/';
 
 var description_url = `${API_URL}videos?part=snippet&id=${VIDEO_ID}&key=${API_KEY}`;
@@ -216,6 +214,27 @@ async function getGubbthumbnails() {
 }
 
 
+
+
+setInterval(getGubbviewCount, 180000) 
+getGubbviewCount()
+
+setInterval(getGubblikeCount, 180000) 
+getGubblikeCount()
+
+setInterval(getGubblikeCount, 180000) 
+getGubblikeCount()
+
+setInterval(getGubbcommentCount, 180000) 
+getGubbcommentCount()
+
+
+
+
+
+
+
+
 getGubbdescription();
 getGubbtitle();
 getGubbthumbnails();
@@ -272,5 +291,3 @@ function updatePage(){
 
 
 
-
-</html>
