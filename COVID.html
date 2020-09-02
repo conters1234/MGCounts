@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+   
+       <meta charest="UTF-8">
+     <link rel="icon" type="image/png" sizes="250x250" href="MG-Counts.png">
+    <link rel="icon" type="image/png" sizes="250x250" href="MG-Counts.png">
+
+<style>
+body {
+        text-align: center
+    }
+    .odometer {
+        font-family: Lato;
+        font-size: 300
+    }
+    #countLabel,
+    #count {
+        color: #FF0066      
+    }
+    #deathLabel,
+    #deaths {
+        color: #FF0000
+    }
+    #activeLabel,
+    #active {
+        color: #0000FF
+    }
+    #recoveredLabel,
+    #recovered {
+        color: #00FF00
+    }
+   #affectedCountriesLabel,
+    #affectedCountries {
+        color: #00ffff
+    }
+   #testsLabel,
+    #tests {
+        color: #ff3300
+    }  
+body {background-color: gray;}
+
+ 
+#active {
+  font-size: 23px;
+}
+
+#count {
+  font-size: 23px;
+}
+
+#deaths {
+  font-size: 23px;
+}
+
+#recovered {
+  font-size: 23px;
+}
+
+#affectedCountries {
+  font-size: 23px;
+}
+
+#tests {
+  font-size: 23px;
+}
+   
+#population {
+  font-size: 50px;
+}
+
+#todayDeaths {
+  font-size: 23px;
+}
+
+#todayCases {
+  font-size: 23px;
+}
+
+#todayRecovered {
+  font-size: 23px;
+}
+
+#critical {
+  font-size: 23px;
+}
+
+#casesPerOneMillion {
+  font-size: 23px;
+}
+
+#deathsPerOneMillion {
+  font-size: 23px;
+}
+
+
+#testsPerOneMillion {
+  font-size: 23px;
+}
+
+#activePerOneMillion {
+  font-size: 23px;
+}
+
+#criticalPerOneMillion {
+  font-size: 23px;
+}
+
+#recoveredPerOneMillion {
+  font-size: 23px;
+}
+
+  
+
+
+
+ .title {
+        font-family: Lato;
+        font-size: 30
+    }
+    h1 {
+        color: #fff;
+        font-family: Lato;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 3;
+        margin-bottom: 10%
+    }
+
+}
+    h2 {
+        color: #C0C0C0;
+        font-family: Lato;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+h1 { color: #FFFFFF; background: linear-gradient(#fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000); font-family: 'Imprima', sans-serif; }
+
+
+
+</style>
+
+
+
+<html>
+<a href="http://mgcounts.atwebpages.com/index.html"><img src="http://jfrenlsubcounter.nl/MG_Counts.jpg"	
+" alt="Sub Counter" style="width:100px;height:100px; outline: 5px dashed black;"></a>
+
+<strong><head><title>Coronavirus statistics</title></strong>
+  <link rel="icon" href="https://tse3.mm.bing.net/th?id=OIP.52XXGKCnk0GkwJ5UQKvQVAHaHa&pid=Api">
+  </head>
+<link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel=stylesheet href="http://mgcounts.atwebpages.com/odometer-theme-default.css">
+<link href='/src/css/corona.css' rel='stylesheet' type='text/css'>        
+<body>
+<h1>COVID-19 (Coronavirus) </h1><br>
+<div class="container">
+<div>
+<h2 class="title" id="countLabel">Total cases</h2>
+<div class="odometer" id="count">0</div>
+</div>
+<div>
+<h2 class="title" id="deathLabel">Total deaths</h2>
+<div class="odometer" id="deaths">0</div>
+</div>
+</div>
+<div class="container">  
+<div>
+<h2 class="title" id="activeLabel" >Active cases</h2>
+<div class="odometer" id="active">0</div>
+</div>
+<div>
+<h2 class="title" id="recoveredLabel" >Recovered</h2>
+<div class="odometer" id="recovered">0</div>
+</div>
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="testsLabel" >Covid 19 Tests</h2> <div class="odometer" id="tests">0</div>
+</div>
+<div>  
+<h2 class="title" id="affectedCountriesLabel" >AffectedCountries</h2>
+<div class="odometer" id="affectedCountries">0</div>
+</div>
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="populationLabel" >Population</h2>
+<div class="odometer" id="population">0</div>
+</div>
+</div>
+<h1>Per Day</h1>
+<div class="container"> 
+</div>  
+<div class="container"> 
+<div>
+<h2 class="title" id="todayCasesLabel" >Cases Today</h2>
+<div class="odometer" id="todayCases">0</div>
+</div>
+<div>  
+<h2 class="title" id="todayDeathsLabel" >Deaths Today</h2>
+<div class="odometer" id="todayDeaths">0</div>
+</div>
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="todayRecoveredLabel" >Recovered Today</h2>
+<div class="odometer" id="todayRecovered">0</div>
+</div>
+<div>  
+<h2 class="title" id="criticalLabel" >Critical Cases</h2>
+<div class="odometer" id="critical">0</div>
+</div>
+</div>
+<div class="container"> 
+</div>
+<h1>Other Stats</h1>
+<div class="container"> 
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="casesPerOneMillionLabel" >Cases Per One Million</h2>
+<div class="odometer" id="casesPerOneMillion">0</div>
+</div>
+<div>  
+<h2 class="title" id="deathsPerOneMillionLabel" >Deaths Per One Million</h2>
+<div class="odometer" id="deathsPerOneMillion">0</div>
+</div>
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="testsPerOneMillionLabel" >Tests Per One Million</h2>
+<div class="odometer" id="testsPerOneMillion">0</div>
+</div>
+<div>  
+<h2 class="title" id="activePerOneMillionLabel" >Active Per One Million</h2>
+<div class="odometer" id="activePerOneMillion">0</div>
+</div>
+</div>
+<div class="container"> 
+<div>  
+<h2 class="title" id="recoveredPerOneMillionLabel" >Recovered Per One Million</h2>
+<div class="odometer" id="recoveredPerOneMillion">0</div>
+</div>
+<div>  
+<h2 class="title" id="criticalPerOneMillionLabel" >Critical Per One Million</h2>
+<div class="odometer" id="criticalPerOneMillion">0</div>
+</div>
+</div>
+
+
+<div class="container"> 
+</div>
+
+
+
+
+
+
+</body>
+<script src="https://github.hubspot.com/odometer/odometer.js"></script>
+
+</html>
+
+
+
+
+
+<script>
+    document.bgColor = "#333"
+    const loadTime = Date.now()
+    
+    class formatDate extends Date {
+        format() {
+            const days =["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+            return `${days[this.getUTCDay()]} at ${this.getUTCHours() < 10 ? "0" + this.getUTCHours() : this.getUTCHours()}:${this.getUTCMinutes() < 10 ? "0" + this.getUTCMinutes() : this.getUTCMinutes()}`
+        }
+    }
+    
+    async function getCoronaStats() {
+        let request = await fetch("https://corona.lmao.ninja/v2/all", { mode: "cors" })
+        let data = await request.json().catch(() => {})
+        if (!data) return;
+        count.innerHTML = data.cases
+        deaths.innerHTML = data.deaths
+        active.innerHTML = data.active
+        population.innerHTML = data.population
+        recovered.innerHTML = data.recovered
+        affectedCountries.innerHTML = data.affectedCountries
+        tests.innerHTML = data.tests
+        todayCases.innerHTML = data.todayCases
+        todayDeaths.innerHTML = data.todayDeaths
+        todayRecovered.innerHTML = data.todayRecovered
+        critical.innerHTML = data.critical
+        casesPerOneMillion.innerHTML = data.casesPerOneMillion
+        deathsPerOneMillion.innerHTML = data.deathsPerOneMillion
+        testsPerOneMillion.innerHTML = data.testsPerOneMillion
+        activePerOneMillion.innerHTML = data.activePerOneMillion
+        recoveredPerOneMillion.innerHTML = data.recoveredPerOneMillion
+        criticalPerOneMillion.innerHTML = data.criticalPerOneMillion
+
+        lastUpdate.innerHTML = `Data last updated: ${new formatDate(data.updated).format()} UTC`
+ 
+
+   }
+    setInterval(getCoronaStats, 30)
+    getCoronaStats()
+    
+    function updateTime() {
+        let seconds = 300 - ((Math.round((Date.now() - loadTime) / 1000)) % 300)
+        let mins = Math.floor(seconds/60)
+        let secs = seconds % 60
+        if (secs < 10) secs = "0" + secs
+        info.innerHTML = `Counts will update in ${mins}:${secs}, if any data is changed`
+    }
+    setInterval(updateTime, 10)
+</script>
+
+<h1 id="info">Counts will update in 5:00, if any data is changed</h1>
+<h1 id="lastUpdate">Data was last updated</h1>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

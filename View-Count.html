@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<head>
+
+  <meta charset="UTF-8">
+     <link rel="icon" type="image/png" sizes="250x250" href="MG-Counts.png">
+    <link rel="icon" type="image/png" sizes="250x250" href="MG-Counts.png">
+</head>
+
+<style>
+
+
+
+
+
+.counter:before {
+        background-image: url("./path/to/your/profileimage.png");
+    }
+
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background-color: #FF0000;
+  color: #FFF;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+
+
+
+.subscribers {
+  font-size: 10vmax;
+}
+
+big {
+ font-size: 18px; 
+}
+
+small {
+  font-size: 14px;
+}
+
+
+body {
+        text-align: center
+    }
+
+#subs {
+  font-size: 50px;
+}
+
+#views {
+  font-size: 50px;
+}
+
+#dislikes{
+  font-size: 50px;
+}
+
+#comments {
+  font-size: 50px;
+}
+
+#likes {
+  font-size: 50px;
+}
+
+h1{font-size:90px;}
+
+h1 { color: #FFFFFF; background: linear-gradient sans-serif; }
+
+
+
+
+
+
+</style>
+
+
+<body>
+  
+  <h1>Views/Likes/Dislikes Counter</h1>
+  <br>
+  <br>
+  <br>
+ 
+<link rel=stylesheet href="http://mgcounts.atwebpages.com/odometer-theme-default.css">
+<img id="img-bg" class="bg" src="https://yt3.ggpht.com/a-/AOh14GgWNp0Dp7-A6lmaH3vWw3GfhQxNFyAyH1KYqRGnqA=s100-c-k-c0xffffffff-no-rj-mo" width="500" height="300">
+
+<br>
+<br>
+<br>
+
+<div><big id="title">Video</big></div>
+<br>
+<br>
+<br>
+<div class="info">
+
+<div class="odometer views" id="views">0</div>
+  <div><small>Views</small></div>
+</div>
+
+
+<div class="container">
+
+<h2>Likes</h2>
+
+<div class="odometer likes" id="likes">0</div>
+
+<h2>Dislikes</h2>
+<div class="odometer" id="dislikes">0</div>
+
+<h2>Comments</h2>
+<div class="odometer" id="comments">0</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div><big id="description">Description</big></div>
+
+</div>
+
+</body>
+
+
+    <script src="https://github.hubspot.com/odometer/odometer.js"></script>
+
+<script src="https://github.hubspot.com/odometer/odometer.js"></script>
+
+
+
+<script>
+
+var params = new URLSearchParams(document.location.search.substring(1));
+var VIDEO_ID = params.get("id");
+//alert(document.location.host);
+//alert(CHANNEL_ID);
+//var CHANNEL_ID = "UCzsVMzUqVPd9taVz6VGY12g";
+
+const API_KEY = "AIzaSyCj3Jia_bcv1ISgHQpa_72oNAHFVABf5_Y";
+const API_URL = 'https://www.googleapis.com/youtube/v3/';
+
+var description_url = `${API_URL}videos?part=snippet&id=${VIDEO_ID}&key=${API_KEY}`;
+var title_url = `${API_URL}videos?part=snippet&id=${VIDEO_ID}&key=${API_KEY}`;
+var picture_url = `${API_URL}videos?part=snippet&id=${VIDEO_ID}&key=${API_KEY}`;
+var viewCount_url = `${API_URL}videos?part=statistics&id=${VIDEO_ID}&key=${API_KEY}`;
+var likeCount_url = `${API_URL}videos?part=statistics&id=${VIDEO_ID}&key=${API_KEY}`;
+var dislikeCount_url = `${API_URL}videos?part=statistics&id=${VIDEO_ID}&key=${API_KEY}`;
+var commentCount_url = `${API_URL}videos?part=statistics&id=${VIDEO_ID}&key=${API_KEY}`;
+
+
+async function getGubbdescription() {
+  const response = await fetch(description_url);
+  const data = await response.json();
+  const description = data.items[0].snippet.description;
+  document.getElementById('description').innerHTML = description;
+}
+
+async function getGubbtitle() {
+  const response = await fetch(title_url);
+  const data = await response.json();
+  const title = data.items[0].snippet.title;
+  document.getElementById('title').innerHTML = title;
+}
+
+async function getGubbviewCount() {
+  const response = await fetch(viewCount_url);
+  const data = await response.json();
+  const views = data.items[0].statistics.viewCount;
+  document.getElementById('views').innerHTML = views;
+}
+
+async function getGubblikeCount() {
+  const response = await fetch(likeCount_url);
+  const data = await response.json();
+  const likes = data.items[0].statistics.likeCount;
+  document.getElementById('likes').innerHTML = likes;
+}
+
+async function getGubbdislikeCount() {
+  const response = await fetch(dislikeCount_url);
+  const data = await response.json();
+  const dislikes = data.items[0].statistics.dislikeCount;
+  document.getElementById('dislikes').innerHTML = dislikes;
+}
+
+async function getGubbcommentCount() {
+  const response = await fetch(commentCount_url);
+  const data = await response.json();
+  const comments = data.items[0].statistics.commentCount;
+  document.getElementById('comments').innerHTML = comments;
+}
+
+async function getGubbthumbnails() {
+  const response = await fetch(picture_url);
+  const data = await response.json();
+  const thumb = data.items[0].snippet.thumbnails.medium.url;
+  const title = data.items[0].snippet.title;
+  document.getElementById('img-bg').src = thumb;
+  document.getElementById('img-avatar').src = thumb;
+  document.getElementById('title').innerHTML = title;
+}
+
+
+getGubbdescription();
+getGubbtitle();
+getGubbthumbnails();
+getGubbviewCount();
+getGubblikeCount();
+getGubbdislikeCount();
+getGubbcommentCount();
+
+//yourFunction();
+
+
+
+function updatePage(){
+    var channel = document.getElementsByName("id").value;
+    var your_form = document.getElementById('SUBS_ID');
+    your_form.action = document.location.href + '?id=' + channel;
+}
+
+
+
+</script>
+
+
+
+    
+    
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center><form id = "SUB_ID" onsubmit="updatePage()">
+    <input type="text" name="id">
+    <input type="submit" value="Count!">
+</form></center>
+    <br>
+    <br>
+<h3>Channel ID</h3>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+</html>
