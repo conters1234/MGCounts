@@ -229,7 +229,7 @@ var CHANNEL_ID = params.get("id");
 
 
    }
-    setInterval(getCoronaStats, 30)
+    setInterval(getCoronaStats, 2000)
     getCoronaStats()
     
     function updateTime() {
@@ -239,7 +239,7 @@ var CHANNEL_ID = params.get("id");
         if (secs < 10) secs = "0" + secs
         info.innerHTML = `Counts will update in ${mins}:${secs}, if any data is changed`
     }
-    setInterval(updateTime, 10)
+    setInterval(updateTime, 2000 )
 </script>
 
 
