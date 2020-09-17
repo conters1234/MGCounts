@@ -298,7 +298,7 @@ var CHANNEL_ID = params.get("id");
     
     
     async function getMixernoStats() {
-        let request = await fetch('https://api.allorigins.win/raw?url=https://api.mixerno.space/twitter/user/'+CHANNEL_ID+'', { mode: "cors" })
+        let request = await fetch('https://api.mixerno.space/twitter/user/'+CHANNEL_ID+'', { mode: "cors" })
         let data = await request.json().catch(() => {})
         if (!data) return;
         tweetsCount.innerHTML = data.tweets
