@@ -211,7 +211,7 @@ var CHANNEL_ID = params.get("id");
     }
     
     async function getCoronaStats() {
-        let request = await fetch('https://mixerno.space/api/youtube/estimated/user/'+CHANNEL_ID+'', { mode: "cors" })
+        let request = await fetch('https://api.allorigins.win/raw?url=https://mixerno.space/api/youtube/estimated/user/'+CHANNEL_ID+'', { mode: "cors" })
         let data = await request.json().catch(() => {})
         if (!data) return;
         SubscriberCount.innerHTML = Math.floor(data.SubscriberCount)
