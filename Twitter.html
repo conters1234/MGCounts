@@ -68,7 +68,7 @@ body {
     }
 
 #followersCount {
-  font-size: 50px;
+  font-size: 100px;
 }
 
 #screen_name {
@@ -76,7 +76,7 @@ body {
 }
 
 #following {
-  font-size: 50px;
+  font-size: 100px;
 }
 
 #tweetsCount {
@@ -124,6 +124,21 @@ body {
     }
    
 
+ .image
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    
+    .image2
+    {
+      position: absolute;
+      top: 60px;
+      left: 0px;
+     
+    }
+    
 </style>
 
 
@@ -131,7 +146,7 @@ body {
 <html>
 
 
-<head><title>Estimated Subscriber Counter</title>
+<head><title>Twitter Live Follower Counter</title>
   <link rel="icon" href="https://tse3.mm.bing.net/th?id=OIP.52XXGKCnk0GkwJ5UQKvQVAHaHa&pid=Api">
 
 
@@ -153,27 +168,32 @@ body {
       <li class="active"><a href="https://sfmg1234.github.io/MGCounts/StoryFire-Follower.html?id=huaPiB3qL1aE7gMCsWJxu9JLiLF3">SF Sub Count</a></li>
       <li class="active"><a href="https://sfmg1234.github.io/MGCounts/Storyfire-View-Count.html?id=5f5250447faca5842bf98dc5">SF View Count</a></li>
       <li class="active"><a href="https://sfmg1234.github.io/MGCounts/COVID.html">COVID Live Count</a></li>
-      <li class="active"><a href="http://mgcounts.atwebpages.com/Twitter.html?id=ElectricRaichuV">Twitter Follower Count</a></li>
+      <li class="active"><a href="https://sfmg1234.github.io/MGCounts/Twitter.html?id=ElectricRaichuV">Twitter Follower Count</a></li>
    </ul>
   </div>
 </nav>
-  <br>
-  <br>
-<h1>YouTube Subscriber Counter</h1>
+<br>
+<br>
+<br>
+
 
 <br>
 
-     
-
+         
          
          
               <center><img src="https://web-stories.s3.us-west-2.amazonaws.com/huaPiB3qL1aE7gMCsWJxu9JLiLF3/hua/huaPiB3qL1aE7gMCsWJxu9JLiLF3_edab3e65-1873-402f-b864-12a02541f159.jpg"
-        id="image1" height="140" width="100%" class="image1"></center>
-     
+        id="image2" height="140" width="100%" class="image2"></center>
+     <br>
+     <br>
+     <br>
+
          
           
            
-<div style="position: relative; left: 200; top: 30;">
+<div style="position: relative; left: 0; top: 0; right: 0">
+ 
+      
        
               <center><img src="https://web-stories.s3.us-west-2.amazonaws.com/huaPiB3qL1aE7gMCsWJxu9JLiLF3/hua/huaPiB3qL1aE7gMCsWJxu9JLiLF3_edab3e65-1873-402f-b864-12a02541f159.jpg"
             id="image" height="140" width="140px" class="image"></center>
@@ -208,24 +228,10 @@ body {
 
 
 
-<div class="container">
-<div>
 
 <h4 class="title" id="ViewLabel" >Following</h4>
 <div class="odometer" id="following">0</div>
-</div>
-<div>
-<h4 class="title" id="videosLabel" >Tweets</h4>
-<div class="odometer" id="tweetsCount">0</div>
 
-</div>
-
-
-</div>
-
-
-
-              
 
 <br>
 <br>
@@ -233,7 +239,7 @@ body {
 <br>
 <br>
 
-
+<h1>Twitter Live Follower Counter</h1>
 
 
 
@@ -273,12 +279,14 @@ var CHANNEL_ID = params.get("id");
  function updateimage(image) {
     document.querySelector(".image").src = image;
 }
- 
- 
-  function updateimage1(image1) {
-    document.querySelector(".image1").src = image1;
+  
+  
+  
+  function updateimage2(image2) {
+    document.querySelector(".image2").src = image2;
 }
  
+
  
  
     async function getCoronaStats() {
@@ -288,8 +296,9 @@ var CHANNEL_ID = params.get("id");
         followersCount.innerHTML = data.followers_count
         following.innerHTML = data.friends_count
         screen_name.innerHTML = data.screen_name
-        
-   }
+        updateimage(data.profile_image_url_https);
+        updateimage2(data.profile_background_image_url_https);
+  }
    
     setInterval(getCoronaStats, 300000000)
     getCoronaStats()
@@ -297,17 +306,9 @@ var CHANNEL_ID = params.get("id");
     
     
     
-    async function getMixernoStats() {
-        let request = await fetch('https://api.allorigins.win/raw?url=https://api.mixerno.space/twitter/user/'+CHANNEL_ID+'', { mode: "cors" })
-        let data = await request.json().catch(() => {})
-        if (!data) return;
-        tweetsCount.innerHTML = data.tweets
-        updateimage(data.pfp);
-        updateimage1(data.pfpbackground)
-   }
+
     
-        setInterval(getMixernoStats, 300000000)
-    getMixernoStats()
+
    
 
 
@@ -359,9 +360,3 @@ var CHANNEL_ID = params.get("id");
   
  
     </html>
-
- 
- 
-
-    
-
