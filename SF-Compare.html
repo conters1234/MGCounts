@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="Welcome to Trend Counts! This is where you can see realtime stats and all of that stuff.">
+     <meta name="image" content="https://trendbattles.github.io/TrendCounts/favicon.ico">
+     <meta property="og:image" content="">
+     <meta property="og:type" content="">
+     <link rel="shortcut icon" href="../favicon.ico">
+   
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css">
+     <title>Trend Counts - Youtube API</title>
+    </head>
+    <body>
+      
+      <style>
+       
+body {
+  text-align: center;
+  font-family: Roboto;
+  background-color: white
+}
+    
+          .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 3;
+        margin-bottom: 10%
+    }
+    
+
+#SubCount {
+  font-size: 80px;
+}
+
+#SubCount2 {
+  font-size: 80px;
+}
+
+#SubGap {
+  font-size: 80px;
+}
+ 
+ 
+ 
+ img {
+    border-radius: 50%;
+  }
+
+#img {
+    border: solid .5vh !Important;
+    border-radius: 100%;
+    border-color: rgb(79, 79, 79) !Important;
+}
+
+ </style>
+      
+      
+<div class="container">
+<div>
+
+
+
+<img class="img-fluid border rounded-circle shadow image" style="width: 150px;height: 150px;" src="https://web-stories.s3.us-west-2.amazonaws.com/huaPiB3qL1aE7gMCsWJxu9JLiLF3/hua/huaPiB3qL1aE7gMCsWJxu9JLiLF3_edab3e65-1873-402f-b864-12a02541f159.jpg">
+<h2 id="username">LOADING</h2>
+<div id="SubCount" class="odometer">0</div>
+</div>
+
+
+
+<div>
+<img class="img-fluid border rounded-circle shadow image2" style="width: 150px;height: 150px;" src="https://web-stories.s3.us-west-2.amazonaws.com/huaPiB3qL1aE7gMCsWJxu9JLiLF3/hua/huaPiB3qL1aE7gMCsWJxu9JLiLF3_edab3e65-1873-402f-b864-12a02541f159.jpg">
+<h2 id="username2">LOADING</h2>
+<div id="SubCount2" class="odometer">0</div>
+</div>
+</div>        
+        
+        
+        
+        
+                
+         
+        
+         
+          
+    
+        
+   
+        <div>Sub Gap</div>
+        <div class="odometer" id="SubGap">0</div>
+
+                 
+ 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+      <script>
+      
+      
+      
+        var count1 = 0; //sub count from 1st channel
+        var count2 = 0; //sub count form 2nd channel
+
+      
+      async function getSFStats() {
+        let request = await fetch('https://storyfire.com/app/users/getProfile/'+channel_id+'', { mode: "cors" })
+        let data = await request.json().catch(() => {})
+        if (!data) return;
+        SubCount.innerHTML = data.followersCount
+        count1 = data.followersCount
+        username.innerHTML = data.username
+        updateAvatar(data.userimage);
+        
+      
+    
+    
+     }
+    setInterval(getSFStats, 30)
+    getSFStats()    
+    
+    
+    
+       async function getSFStat() {
+        let request = await fetch('https://storyfire.com/app/users/getProfile/'+channel_id2+'', { mode: "cors" })
+        let data = await request.json().catch(() => {})
+        if (!data) return;
+        SubCount2.innerHTML = data.followersCount
+        count2 = data.followersCount
+        SubGap.innerHTML = count1-count2;
+        username2.innerHTML = data.username
+        updateAvatar2(data.userimage);
+        
+    
+    
+     }
+    setInterval(getSFStat, 30)
+    getSFStat()
+    
+    
+     function updateAvatar(img) {
+    document.querySelector(".image").src = img;
+}
+ 
+      function updateAvatar2(img) {
+    document.querySelector(".image2").src = img;
+}
+ 
+ 
+
+
+ 
+ 
+ //yourFunction();
+ 
+ 
+
+         var params = location.href.split('&id=');
+        var channel_id = params[1];
+        var channel_id2 = params[2];
+        var count1 = 0;
+        var count2 = 0;
+        getYTStats();
+        function updatePage1(){
+            var channel = document.getElementById("id").value;
+            var channel2 = document.getElementById("id2").value;
+            location.href = `?&id=${channel}&id=${channel_id2}`;
+        }
+        function updatePage2(){
+            var channel = document.getElementById("id").value;
+            var channel2 = document.getElementById("id2").value;
+            location.href = `?&id=${channel_id}&id=${channel2}`;
+        }
+ 
+
+
+     
+     
+     </script>
+    <br>
+    <br>
+        <br>
+            <br>
+                <br>
+     <div class="container">
+<div>
+
+     
+     
+     
+                  <input type="text" id="id">
+          <input type="submit" onclick="updatePage1()" value="Submit">
+          <h5>Channel ID 1</h5>
+          </div>
+          <div>
+     
+        <input type="text" id="id2">
+          <input type="submit" onclick="updatePage2()" value="Submit">
+     <h5>Channel ID 2</h5>
+     </div>
+
+     
+
+          </div>
+    </body>
+</html>
