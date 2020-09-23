@@ -287,7 +287,7 @@ var CHANNEL_ID = params.get("id");
  
  
     async function getCoronaStats() {
-        let request = await fetch('https://api.allorigins.win/raw?url=https://www.tiktok.com/node/share/user/@'+CHANNEL_ID+'', { mode: "cors" })
+        let request = await fetch('https://www.tiktok.com/node/share/user/@'+CHANNEL_ID+'', { mode: "cors" })
         let data = await request.json().catch(() => {})
         if (!data) return;
         followersCount.innerHTML = data.body.userData.fans
