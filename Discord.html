@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+   
+       <meta charest="UTF-8">
+     <link rel="icon" type="image/png" sizes="250x250" href="https://sfmg1234.github.io/MGCounts/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="250x250" href="https://sfmg1234.github.io/MGCounts/favicon-32x32.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.counter:before {
+        background-image: url("./path/to/your/profileimage.png");
+    }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif:
+}
+
+h1 {
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 255));
+}
+
+h1 {
+    padding: 20px;
+    color: white;
+}
+
+
+
+.bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: .25;
+  width: 50vmax;
+  height: auto;
+  filter: blur(3vmax);
+}
+
+.avatar {
+  width: 10vmax;
+  height: 10vmax;
+  border-radius: 500%;
+  margin-bottom: 2vmax;
+}
+
+.subscribers {
+  font-size: 10vmax;
+}
+
+big {
+ font-size: 18px; 
+}
+
+small {
+  font-size: 14px;
+}
+
+body {
+        text-align: center
+    }
+
+#members {
+  font-size: 50px;
+}
+
+#subsapi {
+  font-size: 20px;
+}
+
+#totalviews {
+  font-size: 50px;
+}
+
+#online {
+  font-size: 50px;
+}
+
+
+#image {
+    border-radius: 50%;
+  }
+
+#image {
+    border: solid .5vh !Important;
+    border-radius: 100%;
+    border-color: rgb(79, 79, 79) !Important;
+}
+
+
+#name {
+  font-size: 50px;
+}
+
+
+ .image
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    
+    .image1
+    {
+      position: absolute;
+      top: 60px;
+      left: 0px;
+     
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 50;
+        margin-bottom: 10%
+    }
+   
+
+</style>
+
+
+
+<html>
+
+
+<head><title>Discord Member Count</title>
+  <link rel="icon" href="https://tse3.mm.bing.net/th?id=OIP.52XXGKCnk0GkwJ5UQKvQVAHaHa&pid=Api">
+
+
+<link rel=stylesheet href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css">      
+<body>
+
+
+
+
+<h1>Discord Server Live Member Count</h1>
+
+<br>
+
+
+
+         
+         
+
+     
+         
+          
+           
+
+       
+             <img src="https://sfmg1234.github.io/MGCounts/MG-Counts.png" id="image">
+
+
+
+
+<br>
+<br>
+<br>
+<div><big id="name"></big></div>
+<br>
+<br>
+
+
+<div class="odometer" id="members">0</div>
+
+<h5>Members</h5>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<h4 class="title" id="ViewLabel" >Online</h4>
+<div class="odometer" id="online">0</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+  <script src="https://sfmg1234.github.io/MGCounts/odometer.js.download"></script>
+
+
+
+
+
+
+<script>
+ 
+var params = new URLSearchParams(document.location.search.substring(1));
+var CHANNEL_ID = params.get("id");
+//alert(document.location.host);
+//alert(CHANNEL_ID);
+//var CHANNEL_ID = "huaPiB3qL1aE7gMCsWJxu9JLiLF3";
+ 
+ 
+ 
+ 
+ 
+ //yourFunction();
+ 
+ 
+ 
+ function updatePage(){
+    var channel = document.getElementsByName("id").value;
+    var your_form = document.getElementById('SUBS_ID');
+    your_form.action = document.location.href + '?id=' + channel;
+}
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+    
+    async function getCoronaStats() {
+        let request = await fetch('https://discord.com/api/v6/invites/'+CHANNEL_ID+'?with_counts=true', { mode: "cors" })
+        let data = await request.json().catch(() => {})
+        if (!data) return;
+        members.innerHTML = data.approximate_member_count
+        online.innerHTML = data.approximate_presence_count
+        name.innerHTML = data.name
+        $("#image").attr('src', `https://cdn.discordapp.com/icons/${data.guild.id}/${data.guild.icon}.png`);
+     
+
+   }
+    setInterval(getCoronaStats, 30000)
+    getCoronaStats()
+    </script>
+    
+    
+    <script>
+
+
+
+	
+	
+		var url1 = 'https://discord.com/api/v6/invites/minecraft?with_counts=true'
+		$.getJSON(url1, function(data){
+			PostContents.innerHTML = data.guild.name
+			$('#imagething2').html('<img src="https://cdn.discordapp.com/icons/'+data.guild.id+'/'+data.guild.icon+'.png"< style="width:150px" id="imagething"/img>');
+		
+		});
+	}
+
+
+</script>
+
+ <img id="imagething2" style="width:160px"></img>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center><form id = "SUB_ID" onsubmit="updatePage()">
+    <input type="text" name="id">
+    <input type="submit" value="Count!">
+</form></center>
+<h3>Channel ID</h3>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+   
+   
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177075755-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177075755-1');
+</script>
+ 
+   
+  
+ 
+    </html>
