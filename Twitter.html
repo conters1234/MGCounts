@@ -274,7 +274,7 @@ var CHANNEL_ID = params.get("id");
 
  
  
-    async function getCoronaStats() {
+    async function getTwitterStats() {
         let request = await fetch('https://api.allorigins.win/raw?url=https://socialbearing.com/scripts/get-user.php?user='+CHANNEL_ID+'', { mode: "cors" })
         let data = await request.json().catch(() => {})
         if (!data) return;
@@ -285,8 +285,8 @@ var CHANNEL_ID = params.get("id");
         updateimage2(data.profile_background_image_url_https);
   }
    
-    setInterval(getCoronaStats, 300000000)
-    getCoronaStats()
+    setInterval(getTwitterStats, 5000)
+    getTwitterStats()
     
     
     
